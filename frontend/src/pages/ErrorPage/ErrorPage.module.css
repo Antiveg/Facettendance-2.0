@@ -1,0 +1,35 @@
+.base {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darkgray-lightgray);
+    color: var(--text-white);
+
+    p {
+        color: var(--text-white)
+    }
+}
+
+.note {
+    font-size: 18px;
+    margin-top: 20px;
+    color: var(--text-white);
+}
+
+.btn {
+    width: fit-content;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: var(--lightgray-darkgray);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text-white);
+}

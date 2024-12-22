@@ -1,0 +1,110 @@
+.base {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    position: relative;
+    gap: 20px;
+}
+
+.exit_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: none;
+}
+
+.left_part, .right_part {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.left_part {
+    background-color: var(--lightgray-darkgray);
+    padding: 20px 0px 20px 0px;
+    border-radius: 10px;
+}
+
+.right_part {
+    gap: 10px;
+}
+
+.notice {
+    flex: 1;
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo_btn {
+    width: 50%;
+    height: 40px;
+    margin-top: 20px;
+    background-color: var(--darkgray-lightgray);
+    
+    p {
+        color: var(--text-white);
+    }
+}
+
+.base_details {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    flex: 1;
+    /* background-color: red; */
+    width: 100%;
+    gap: 5px;
+    overflow: auto;
+}
+
+.map_img {
+    object-fit: cover;
+    aspect-ratio: 1;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 0.5px solid var(--init-black);
+}
+
+.liveContainer {
+    width: 100%;
+    max-width: 350px;
+    /* background-color: purple; */
+    position: relative;
+}
+
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+}

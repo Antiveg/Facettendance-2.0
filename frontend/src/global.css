@@ -1,0 +1,77 @@
+:root {
+    --white-gray: rgb(255, 255, 255);
+    --darkgray-lightgray: rgb(49, 49, 49);
+    --lightgray-darkgray: rgb(174, 174, 174);
+    --text-black: black;
+    --text-white: white;
+    --text-lightgray: lightgrey;
+    --init-white: white;
+    --init-black: black;
+    --init-gray: lightgray;
+    --black-shadow: rgba(33, 33, 33, 0.3);
+}
+
+.super-huge-title {
+    font-size: 120px;
+    font-weight: bolder;
+    line-height: 0.9;
+}
+
+.big-title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.medium-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.small-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.small-text {
+    font-size: 18px;
+}
+
+.warning-text {
+    font-size: 16px;
+    color: var(--text-lightgray);
+}
+
+.light-text {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.not-found {
+    color: var(--text-lightgray);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

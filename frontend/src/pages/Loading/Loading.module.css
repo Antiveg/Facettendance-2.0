@@ -1,0 +1,39 @@
+.base {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--tertiary);
+}
+
+.note {
+    font-size: 18px;
+    margin-top: 20px;
+    color: var(--init-black);
+}
+
+.st0 {
+    fill: var(--init-black);
+}
+
+.btn {
+    width: fit-content;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: var(--fourth);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-hover);
+    transition: 0.3s;
+}

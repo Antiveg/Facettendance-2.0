@@ -1,0 +1,31 @@
+.base {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 80px 30px 80px;
+    width: 100vw;
+    flex: 1;
+    gap: 20px;
+}
+
+.basicInfo {
+    background-color: var(--lightgray-darkgray);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.img_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--lightgray-darkgray);
+    gap: 5px;
+    padding: 5px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}

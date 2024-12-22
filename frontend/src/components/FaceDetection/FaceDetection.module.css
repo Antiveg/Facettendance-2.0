@@ -1,0 +1,29 @@
+.base {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: purple; */
+}
+
+.video_container {
+    position: relative;
+    width: 90%;
+    height: fit-content;
+}
+
+.video {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: fit-content;
+}
+  
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+}
