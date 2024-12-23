@@ -30,7 +30,7 @@ const CameraModal = ({ onClose, event, user }) => {
                 const stream = await navigator.mediaDevices.getUserMedia({
                     video: true,
                 })
-                if (videoRef.current) {
+                if(videoRef.current){
                     videoRef.current.srcObject = stream
                 }
                 const loadedModel = await blazeface.load()
