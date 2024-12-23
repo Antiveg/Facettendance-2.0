@@ -163,9 +163,47 @@ const getEventsByUserId = async (req, res, next) => {
             ]
         })
 
+        const formattedEvents = events.map((event) => {
+            const eventDetails = event.Event
+        
+            const start_time = new Date(eventDetails.start_time)
+            const end_time = new Date(eventDetails.end_time)
+        
+            const formattedStartTime = start_time.toLocaleString('en-US', {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            })
+        
+            const formattedEndTime = end_time.toLocaleString('en-US', {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            })
+        
+            return {
+                ...event.toJSON(),
+                Event: {
+                    ...eventDetails.toJSON(),
+                    start_time: formattedStartTime,
+                    end_time: formattedEndTime
+                }
+            };
+        });
+
         res.status(200).json({
             message: "successfully fetch all event associated with logged user along with its participants",
-            data: events
+            data: formattedEvents
         })
     }catch(error){
         next(error)
