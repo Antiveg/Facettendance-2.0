@@ -50,42 +50,44 @@ const CameraModal = ({ onClose, event, user }) => {
         }
     }, [])
 
-    const detectFaces = async () => {
-        if (model && videoRef.current && detectionCanvasRef.current) {
-            const video = videoRef.current
-            const canvas = detectionCanvasRef.current
-            const context = canvas.getContext('2d')
-
-            canvas.width = video.videoWidth
-            canvas.height = video.videoHeight
-
-            const predict = async () => {
-                const predictions = await model.estimateFaces(video, false)
-                context.clearRect(0, 0, canvas.width, canvas.height)
-
-                predictions.forEach((prediction) => {
-                    const startX = prediction.topLeft[0]
-                    const startY = prediction.topLeft[1]
-                    const width = prediction.bottomRight[0] - startX
-                    const height = prediction.bottomRight[1] - startY
-                    context.beginPath()
-                    context.rect(startX, startY, width, height)
-                    context.lineWidth = 2
-                    context.strokeStyle = 'red'
-                    context.fillStyle = 'red'
-                    context.stroke()
-                    context.fillText(
-                        'Face',
-                        startX,
-                        startY > 10 ? startY - 10 : 10
-                    )
-                })
-                console.log("Drawing...")
-                requestAnimationFrame(predict)
+    useEffect(() => {
+        const detectFaces = async () => {
+            if(model && videoRef.current && detectionCanvasRef.current){
+                const video = videoRef.current
+                const canvas = detectionCanvasRef.current
+                const context = canvas.getContext('2d')
+    
+                canvas.width = video.videoWidth
+                canvas.height = video.videoHeight
+    
+                const predict = async () => {
+                    const predictions = await model.estimateFaces(video, false)
+                    context.clearRect(0, 0, canvas.width, canvas.height)
+    
+                    predictions.forEach((prediction) => {
+                        const startX = prediction.topLeft[0]
+                        const startY = prediction.topLeft[1]
+                        const width = prediction.bottomRight[0] - startX
+                        const height = prediction.bottomRight[1] - startY
+                        context.beginPath()
+                        context.rect(startX, startY, width, height)
+                        context.lineWidth = 2
+                        context.strokeStyle = 'red'
+                        context.fillStyle = 'red'
+                        context.stroke()
+                        context.fillText(
+                            'Face',
+                            startX,
+                            startY > 10 ? startY - 10 : 10
+                        )
+                    })
+                    requestAnimationFrame(predict)
+                }
+                predict()
             }
-            predict()
         }
-    }
+        detectFaces()
+    }, [model, videoRef.current, detectionCanvasRef.current])
 
     const captureImage = async () => {
         if(videoRef.current && captureCanvasRef.current){
