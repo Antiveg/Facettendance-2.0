@@ -8,25 +8,25 @@ encode_faces("detected_faces")
 data = [
     {}, #biarin aja jangan diisi
     { #1
-        "name": "Erlina Sing",
+        "name": "VVVV",
         "total_attendance": 6,
         "last_attendance_time": "2023-12-11 00:54:34",
         "image":"detected_faces/1.jpg"
     },
     { #2
-        "name": "Susi Mullan",
+        "name": "WWWW",
         "total_attendance": 5,
         "last_attendance_time": "2023-12-11 00:54:34",
         "image":"detected_faces/2.jpg"
     },
     { #3
-        "name": "Felix Gerald",
+        "name": "XXXX",
         "total_attendance": 5,
         "last_attendance_time": "2023-12-11 00:54:34",
         "image":"detected_faces/3.jpg"
     },
     { #4
-        "name": "Stanic Dylan",
+        "name": "YYYY",
         "total_attendance": 3,
         "last_attendance_time": "2023-12-11 00:54:34",
         "image":"detected_faces/4.jpg"
