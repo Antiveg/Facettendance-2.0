@@ -80,6 +80,7 @@ const CameraModal = ({ onClose, event, user }) => {
                         startY > 10 ? startY - 10 : 10
                     )
                 })
+                console.log("Drawing...")
                 requestAnimationFrame(predict)
             }
             predict()

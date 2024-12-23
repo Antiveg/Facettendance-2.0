@@ -251,7 +251,7 @@ const validateEventAttendance = async (req, res, next) => {
             
             const realuser = await User.findOne({
                 where: {
-                    id: result.match_userId
+                    id: userId
                 }
             })
 
@@ -263,7 +263,7 @@ const validateEventAttendance = async (req, res, next) => {
                     }
                 })
                 res.status(200).json({
-                    message: `You're ${fakeuser.name} (ID: ${fakeuser.id}), you're not ${realuser.name} (ID: ${realuser.id}), `,
+                    message: `You're ${fakeuser.name} (ID: ${fakeuser.id}), you're not ${realuser.name} (ID: ${realuser.id}), (${(1 - result.match_distance) * 100}% similarity to ${fakeuser.name})`,
                     status: result.match_result,
                     similarity: (1 - result.match_distance) * 100,
                     user: fakeuser
@@ -290,7 +290,7 @@ const validateEventAttendance = async (req, res, next) => {
                 })
 
                 res.status(200).json({
-                    message: `Hello, ${realuser.name} (ID: ${realuser.id}). Your attendance has been recorded!`,
+                    message: `Hello, ${realuser.name} (ID: ${realuser.id}). Your attendance has been recorded! (${(1 - result.match_distance) * 100}% similarity)`,
                     status: result.match_result,
                     similarity: (1 - result.match_distance) * 100,
                     attendance: updatedEventAttendance
